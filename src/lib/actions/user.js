@@ -32,12 +32,22 @@ export const createOrUpdateUser = async (
   }
 };
 
-export const deleteUser = async (id) = {
-    try {
-        await connect();
+// export const deleteUser = async (id) = {
+//     try {
+//         await connect();
 
-        await User.findOneAndDelete({ clerkId: id });
-    } catch (error) {
-        console.log("Error deleting user:" , error);
-    }
-}
+//         await User.findOneAndDelete({ clerkId: id });
+//     } catch (error) {
+//         console.log("Error deleting user:" , error);
+//     }
+// }
+
+export const deleteUser = async (id) => {
+  try {
+    await connect();
+
+    await User.findOneAndDelete({ clerkId: id });
+  } catch (error) {
+    console.log("Error deleting user:", error);
+  }
+};
